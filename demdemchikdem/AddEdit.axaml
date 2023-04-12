@@ -1,0 +1,96 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" MinWidth="500" MinHeight="550"
+		MaxWidth="500" MaxHeight="550"
+        x:Class="demdemchikdem.AddEdit"
+        Title="AddEdit">
+	<Grid ColumnDefinitions="80* 20*"
+		  ShowGridLines="True">
+		<StackPanel Grid.Column="0"
+					VerticalAlignment="Center"
+					HorizontalAlignment="Right"
+					Spacing="10">
+			<TextBlock Name="Title"
+			   VerticalAlignment="Top"
+				HorizontalAlignment="Center"
+					   Grid.ColumnSpan="2"/>
+			<StackPanel Orientation="Horizontal"	
+						HorizontalAlignment="Right"
+						>
+				<TextBlock Text="Наименование: "
+						   Height="20"/>
+				<TextBox Width="200" Name="Name"/>
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal"
+						HorizontalAlignment="Right">
+				<TextBlock Text="Тип агента: "
+						   Height="20"/>
+				<ComboBox Width="200" Name="Type"/>
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal"
+			HorizontalAlignment="Right">
+				<TextBlock Text="Приоритет: "
+						   Height="20"/>
+				<TextBox Width="200" Name="Priority"/>
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal"
+				HorizontalAlignment="Right">
+				<TextBlock Text="Логотип компании: "
+						   Height="20"/>
+				<TextBox Width="200" Name="Logo"/>
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal"
+						HorizontalAlignment="Right">
+				<TextBlock Text="Адрес: "
+						   Height="20"/>
+				<TextBox Width="200" Name="Address"/>
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal"
+						HorizontalAlignment="Right">
+				<TextBlock Text="ИНН: "
+						   Height="20"/>
+				<TextBox Width="200" Name="INN"/>
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal"
+					HorizontalAlignment="Right">
+				<TextBlock Text="КПП: "
+						   Height="20"/>
+				<TextBox Width="200" Name="KPP"/>
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal"
+						HorizontalAlignment="Right">
+				<TextBlock Text="Имя директора: "
+						   Height="20"/>
+				<TextBox Width="200" Name="DirName"/>
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal"
+			HorizontalAlignment="Right">
+				<TextBlock Text="Телефон: "
+						   Height="20"/>
+				<TextBox Width="200" Name="Phone"/>
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal"
+						HorizontalAlignment="Right">
+				<TextBlock Text="Email: "
+						   Height="20"/>
+				<TextBox Width="200" Name="Email"/>
+			</StackPanel>
+			<Button 
+				Name="Save"
+				Content="Сохранить"
+				HorizontalAlignment="Right"/>
+		</StackPanel>
+	</Grid>
+
+</Window>

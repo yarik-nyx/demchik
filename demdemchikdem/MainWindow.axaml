@@ -1,0 +1,90 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="demdemchikdem.MainWindow"
+        Title="demdemchikdem">
+	<Grid RowDefinitions="5* 90* 10*"
+		  ColumnDefinitions="40* 30* 30*">
+        <TextBox Grid.Row="0" 
+				 Name="Search"
+				 Height="35"
+				 VerticalAlignment="Center"
+				 Grid.Column="0"
+				 HorizontalAlignment="Stretch"
+				 Margin="5 0 5 0"/>
+		<ComboBox Grid.Row="0" 
+				  Name="Sort"
+				  HorizontalAlignment="Stretch"
+				  VerticalAlignment="Center"
+				  Grid.Column="1"
+				  Height="35"
+			  Margin="5 0 5 0"/>
+		<ComboBox Grid.Row="0"
+				  Name="Filter"
+					Margin="5 0 5 0"
+				  Height="35"
+				  HorizontalAlignment="Stretch"
+				  VerticalAlignment="Center"
+				  Grid.Column="2"/>
+		<ListBox
+			Grid.Row="1"
+			Margin="5"
+			Name="Lbox"
+			Grid.ColumnSpan="3">
+			<ListBox.ItemTemplate>
+				<DataTemplate>
+					<Border
+						BorderThickness="1"
+						BorderBrush="Black"
+						Background="{Binding Color}">
+						<DockPanel>
+							<TextBlock
+								Text="{Binding DiscountStr}"
+								DockPanel.Dock="Right"
+								VerticalAlignment="Center"
+								Margin="0 0 10 0"/>
+							<Image
+								Width="64"
+								Height="64"
+								Source="{Binding Img}"
+								DockPanel.Dock="Left"/>
+							<StackPanel Spacing="5" Margin="10">
+								<StackPanel Orientation="Horizontal">
+									<TextBlock Text="{Binding Agenttype}"/>
+									<TextBlock Text=" | "/>
+									<TextBlock Text="{Binding Title}"/>
+								</StackPanel>
+								<TextBlock Text="{Binding SalesStr}"/>
+								<TextBlock Text="{Binding Phone}"/>
+								<TextBlock Text="{Binding PriorityStr}"/>
+								<StackPanel Orientation="Horizontal" Spacing="10">
+									<Button Content="Редактировать" 
+											Tag="{Binding Id}"
+											HorizontalContentAlignment="Center"
+											Click="Edit_Click"										
+											Name="edit"/>
+									<Button Content="Удалить" 
+											Tag="{Binding Id}"
+											HorizontalContentAlignment="Center"
+											Click="Delete_Click"
+											Name="delete"/>
+								</StackPanel>
+							</StackPanel>
+
+						</DockPanel>
+					</Border>
+				</DataTemplate>
+			</ListBox.ItemTemplate>
+		</ListBox>
+		<Button Content="Добавить"
+				Name="Add"
+				VerticalAlignment="Center"
+				HorizontalAlignment="Right"
+				Margin="0 0 5 0"
+				Grid.Column="3"
+				Grid.Row="3"
+				/>
+	</Grid>
+</Window>
